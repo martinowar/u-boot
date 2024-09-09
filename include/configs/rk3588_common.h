@@ -31,6 +31,7 @@
 	"partitions=" PARTS_DEFAULT	\
 	ENV_MEM_LAYOUT_SETTINGS		\
 	ROCKCHIP_DEVICE_SETTINGS	\
-	"boot_targets=" BOOT_TARGETS "\0"
+	"boot_targets=" BOOT_TARGETS "\0" \
+	BOARD_EXTRA_ENV_SETTINGS
 
 #endif /* __CONFIG_RK3588_COMMON_H */
