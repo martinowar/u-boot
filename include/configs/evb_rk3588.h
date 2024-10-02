@@ -16,9 +16,10 @@
 
 #define BOARD_EXTRA_ENV_SETTINGS \
 	"bootcmd=bootmenu\0" \
-	"bootmenu_0=boot mmc0=setenv boot_targets mmc0; bootflow scan -lGb; bootmenu\0" \
-	"bootmenu_1=boot nvme0=setenv boot_targets nvme0; bootflow scan -lGb; bootmenu\0" \
-	"bootmenu_2=boot mmc1=setenv boot_targets mmc1; bootflow scan -lGb; bootmenu\0" \
-	"bootmenu_3=reboot=reset\0" \
-	"bootmenu_4=power off=poweroff\0" \
-	"bootmenu_delay=5\0"
+	"bootmenu_0=boot nvme0 (script)=setenv boot_targets nvme0; bootmeth order script; bootflow scan -b; bootmenu\0" \
+	"bootmenu_1=boot nvme0 (extlinux)=setenv boot_targets nvme0; bootmeth order extlinux; bootflow scan -b; bootmenu\0" \
+	"bootmenu_2=boot mmc0=setenv boot_targets mmc0; bootflow scan -lGb; bootmenu\0" \
+	"bootmenu_3=boot mmc1=setenv boot_targets mmc1; bootflow scan -lGb; bootmenu\0" \
+	"bootmenu_4=reboot=reset\0" \
+	"bootmenu_5=power off=poweroff\0" \
+	"bootmenu_delay=3\0"
